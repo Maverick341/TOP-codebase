@@ -27,9 +27,9 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === "scissors" && computerChoice === "paper") ||
         (humanChoice === "paper" && computerChoice === "rock")
     ) {
-        resultMessage = `human wins! ${humanSelection.charAt(0).toUpperCase() + humanSelection.slice(1)} beats ${computerSelection}.`;
+        resultMessage = `human wins! ${humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}.`;
     } else {
-        resultMessage = `Computer wins! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${humanSelection}.`;
+        resultMessage = `Computer wins! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}.`;
     }
 
     return resultMessage;
@@ -49,7 +49,7 @@ function handlePlayerSelection(playerSelection){
 }
 
 function updateDOM(resultMessage){
-    document.getElementById("results").innerText = `Last Round: ${resultMessage}`;
+    document.getElementById("results").innerText = `Round Result: ${resultMessage}`;
     document.getElementById("score").innerText = `Human: ${humanScore} | Computer: ${computerScore}`;
 }
 
