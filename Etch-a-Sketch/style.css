@@ -52,7 +52,7 @@ button {
     padding: 10px 20px; 
     margin: 10px; 
     font-size: 16px; 
-    background-color: #4CAF50; 
+    background-color: #3035c9; 
     color: white; 
     border: none; 
     border-radius: 5px; 
@@ -61,6 +61,6 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; 
+    background-color: #6e6ac5; 
     transform: scale(1.05);
 }
