@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center;    /* Center vertically */
+            height: 100vh;         /* Full viewport height */
+            background-color: #f4f4f4; /* Light background for contrast */
+            margin: 0;             /* Remove default margin */
+        }
+        #calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 250px;          /* Increased width */
+            padding: 20px;        /* Padding inside calculator */
+            border-radius: 10px;   /* Rounded corners */
+            background-color: #fff; /* White background for calculator */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+        #display {
+            grid-column: span 4;
+            height: 40px;
+            text-align: right;
+            padding: 10px;
+            font-size: 24px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        button {
+            padding: 20px;
+            font-size: 18px;
+            border: 2px solid #aaa; /* Border added */
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s;
+            width: 100%; /* Make buttons fill their grid space */
+        }
+        button:active {
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="calculator">
+        <div id="display">0</div>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>/</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+        <button>0</button>
+        <button>C</button>
+        <button>=</button>
+        <button>+</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
