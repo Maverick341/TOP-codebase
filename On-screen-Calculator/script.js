@@ -12,7 +12,7 @@ buttons.forEach(button => {
 
         if (buttonText === 'C') {
             currentInput = '';
-            firstNumber = null;
+            firstNumber = 0;
             operator = null;
             expression = '';
 
