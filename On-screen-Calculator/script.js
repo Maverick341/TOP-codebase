@@ -12,7 +12,7 @@ buttons.forEach(button => {
 
         if (buttonText === 'C') {
             currentInput = '';
-            firstNumber = 0;
+            firstNumber = null;
             operator = null;
             expression = '';
 
@@ -41,7 +41,7 @@ buttons.forEach(button => {
 
                 operator = buttonText;
             
-                expression += currentInput + ' ' + operator + ' ';
+                expression = firstNumber + ' ' + operator + ' ';
                 currentInput = '';
                 updateDisplay(expression);
             }
