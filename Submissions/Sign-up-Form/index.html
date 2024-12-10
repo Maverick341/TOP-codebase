@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="side-image">
         <div class="banner">
@@ -13,11 +15,63 @@
             <h1 style="font-family: 'Norse'; color: white;">ODIN</h1>
         </div>
         <div class="img-credit">
-            <p>Image by <a href="http://www.flickr.com/photos/nasahubble/53433552657/">Nasa</a>.</p>
+            <p>Image by <a href="http://www.flickr.com/photos/nasahubble/53433552657/">Nasa</a></p>
         </div>
     </div>
     <main>
+        <div class="display-text">
+            <p>This is not a real online service! You know you need something like this in your life to help you realize
+                your deepest dreams. Sign up now to get started.</p>
+            <p>You <em>know</em> you want to.</p>
+        </div>
+        <div class="form">
+            <form action="">
+                <div class="form-wrapper">
+                    <h2>Let's do this!</h2>
 
+                    <section class="input-fields">
+                        <div class="form-group">
+                            <label for="firstName">FIRST NAME</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="lastName">LAST NAME</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="phoneNumber">PHONE NUMBER</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" title="Enter a valid 10-digit phone number."
+                                placeholder="1234567890" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="password">PASSWORD</label>
+                            <input type="password" id="password" name="password" minlength="6" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="confirmPassword">CONFIRM PASSWORD</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" minlength="6" required>
+                        </div>
+                    </section>
+                </div>
+                <div class="submit-form">
+                    <div class="register-btn">
+                        <button type="submit">Create Account</button>
+                    </div>
+                    <div class="log-in">Already have an account? <span>Log-in</span></div>
+                </div>
+                
+            </form>
+        </div>
     </main>
 </body>
+
 </html>
