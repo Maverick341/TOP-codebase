@@ -1,5 +1,16 @@
-// let bookCount = 0;
-// let bookDisplayCount = 0;
+const libraryContainer = document.querySelector('#library');
+
+const newBookButton = document.querySelector("#new-book-btn");
+const bookDialog = document.querySelector("#book-dialog");
+const addBookForm = document.querySelector("#book-form");
+const closeDialogButton = document.querySelector("#close-dialog-btn");
+
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
+const hasRead = document.querySelector("#hasRead");
+
+const noBook = document.querySelector('.no-books');
 
 const myLibrary = [];
 
@@ -19,9 +30,13 @@ function addBookToLibrary(title, author, pages, hasRead) {
     myLibrary.push(curBook);
 }
 
+addBookToLibrary("Star Wars: A New Hope", "George Lucas", 1, true);
+addBookToLibrary("Indiana Jones and the Last Crusade", "Rob MacGregor", 1, false);
+addBookToLibrary("Spider-Man: The Ultimate Guide", "Tom DeFalco", 1, true);
+addBookToLibrary("One Piece: East Blue Saga", "Eiichiro Oda", 1130, true);
+addBookToLibrary("Dragon Ball: The Complete Illustrations", "Akira Toriyama", 519, false);
 
 function displayLibrary() {
-    const libraryContainer = document.querySelector('#library');
     libraryContainer.innerHTML = '';
 
     myLibrary.forEach((book, index) => {
@@ -33,25 +48,39 @@ function displayLibrary() {
             <p>Author: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
             <p>Status: ${book.hasRead ? 'Read' : 'Not Read'}</p>
-            <button id=${index} class='read-button ${book.isRead ? 'done-reading' : ''}'>${book.isRead ? "DONE READING" : "NOT FINISHED READING"}</button>
-            <button id=${index} class='delete-button'> REMOVE THIS BOOK </button>
+            <button id=${index} class='read-status-button ${book.hasRead ? 'done-reading' : ''}'>${book.hasRead ? "DONE READING" : "NOT FINISHED READING"}</button>
+            <button id=${index} class='button-delete'> REMOVE THIS BOOK </button>
         `;
 
         libraryContainer.appendChild(bookCard);
     });
+
+    if (libraryContainer.childElementCount != 0) {
+        noBook.style.display = 'none';
+    } else {
+        noBook.style.display = 'flex';
+    }
+
+    const readBooks = document.getElementsByClassName('read-status-button');
+    Array.from(readBooks).forEach(readBook => {
+        readBook.addEventListener('click', () => {
+            const index = readBook.getAttribute('data-index');
+            myLibrary[index].toggleReadStatus();
+            displayLibrary();
+        })
+    });
+
+    const removeBooks = document.getElementsByClassName('button-delete');
+    Array.from(removeBooks).forEach(removeBook => {
+        removeBook.addEventListener('click', () => {
+            const index = removeBook.getAttribute('data-index');
+            myLibrary.splice(index, 1);
+            displayLibrary();
+        })
+    });
 }
 
 function bookForm() {
-    const newBookButton = document.querySelector("#new-book-btn");
-    const bookDialog = document.querySelector("#book-dialog");
-    const bookForm = document.querySelector("#book-form");
-    const closeDialogButton = document.querySelector("#close-dialog-btn");
-
-    const title = document.querySelector("#title");
-    const author = document.querySelector("#author");
-    const pages = document.querySelector("#pages");
-    const hasRead = document.querySelector("#hasRead");
-
     newBookButton.addEventListener("click", () => {
         bookDialog.showModal();
     });
@@ -60,7 +89,7 @@ function bookForm() {
         bookDialog.close();
     })
 
-    bookForm.addEventListener("submit", (event) => {
+    addBookForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
         handleSubmit();
@@ -75,22 +104,6 @@ function bookForm() {
     }
 }
 
-function removeBook(index) {
-    // Logic to remove the book from the library array and update the display
-}
+bookForm();
 
-function toggleReadStatus(index) {
-    // Logic to toggle the read status of the book and update the display
-}
-
-
-
-// const sampleBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
-
-// // Add the sample book to the array
-// myLibrary.push(sampleBook);
-
-// // Call displayLibrary to show the book on the page
-// displayLibrary();
-
-// bookForm();
+displayLibrary();
