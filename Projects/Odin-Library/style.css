@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+#library {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    /* max-width: 75%; */
+}
+
+
+.message {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.no-books {
+    display: none;
+    font-size: 1.5rem;
+    color: #888;
+}
+
+
+#new-book-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.book-card {
+    background-color: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.book-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+
+.book-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+.read-status-button {
+    padding: 8px 16px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.button-delete {
+    padding: 8px 16px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/* #book-dialog {
+    display: none; 
+    position: fixed;  
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    padding: 20px;
+    width: 400px;
+    background-color: white;
+    z-index: 1000; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+
+#close-dialog-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+#book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+#book-form input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+#book-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+body.modal-open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+}
+
+
+body.modal-open {
+    overflow: hidden;
+} */

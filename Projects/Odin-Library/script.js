@@ -64,8 +64,7 @@ function displayLibrary() {
     const readBooks = document.getElementsByClassName('read-status-button');
     Array.from(readBooks).forEach(readBook => {
         readBook.addEventListener('click', () => {
-            const index = readBook.getAttribute('data-index');
-            myLibrary[index].toggleReadStatus();
+            myLibrary[readBook.id].toggleReadStatus();
             displayLibrary();
         })
     });
@@ -83,10 +82,12 @@ function displayLibrary() {
 function bookForm() {
     newBookButton.addEventListener("click", () => {
         bookDialog.showModal();
+        // document.body.classList.add('modal-open');
     });
 
     closeDialogButton.addEventListener('click', () => {
         bookDialog.close();
+        // document.body.classList.remove('modal-open');
     })
 
     addBookForm.addEventListener("submit", (event) => {
@@ -101,6 +102,7 @@ function bookForm() {
         displayLibrary();
 
         bookDialog.close();
+        // document.body.classList.remove('modal-open'); 
     }
 }
 
