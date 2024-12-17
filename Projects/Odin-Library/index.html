@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin-Library</title>
+    <title>Odin Library</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>My Library</h1>
+    </header>
+
+    <main>
+        <!-- Button to Add New Book -->
+        <button id="new-book-btn">Add New Book</button>
+
+        <!-- Form to Input New Book Details (initially hidden) -->
+        <div class="form">
+            <form id="book-form" style="display: none;">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
     
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+    
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" name="pages" required>
+    
+                <label for="hasRead">Read:</label>
+                <input type="checkbox" id="hasRead" name="hasRead">
+    
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+
+        <!-- Container to Display Books -->
+        <div id="library"></div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
