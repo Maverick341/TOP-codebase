@@ -126,7 +126,7 @@ const GameController = () => {
 
 
     const playRound = (row, column) => {
-        // if (gameOver) return;
+        if (gameOver) return;
 
         console.log(`Placing ${getactivePlayer().name}'s marker into row ${row} & column ${column}...`);
         const playerMove = gameboard.placeMark(row, column, getactivePlayer().marker);
@@ -159,7 +159,6 @@ const GameController = () => {
     };
 };
 
-// const game = GameController();
 
 const screenController = (() => {
     const game = GameController();
@@ -184,11 +183,6 @@ const screenController = (() => {
                 cellButton.dataset.row = rowIndex;
                 cellButton.dataset.column = colIndex;
                 cellButton.textContent = cell.getValue();
-
-                if (cell.getValue() === " ") {
-                    cellButton.disabled = false;  // Disable already filled cells
-                }
-
                 boardDiv.appendChild(cellButton);
             })
         })
