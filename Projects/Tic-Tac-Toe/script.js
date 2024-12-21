@@ -169,10 +169,13 @@ const GameController = () => {
 
 const screenController = (() => {
     const game = GameController();
-    const playerTurnDiv = document.querySelector('.turn');
+    const status = document.querySelector('.status');
     const boardDiv = document.querySelector('.board');
-    const resultDiv = document.querySelector('.result');
+    // const resultDiv = document.querySelector('.result');
     const resetButton = document.querySelector('.reset');
+    const playerForm = document.querySelector('.form-overlay');
+    const player1Input = document.getElementById('player1-name');
+    const player2Input = document.getElementById('player2-name');
 
     const updateScreen = () => {
         boardDiv.textContent = "";
@@ -180,8 +183,8 @@ const screenController = (() => {
         const board = game.getBoard();
         const activePlayer = game.getactivePlayer();
 
-        playerTurnDiv.textContent = `${activePlayer.name}'s turn...`;
-        resultDiv.textContent = "";
+        status.textContent = `${activePlayer.name}'s turn...`;
+        // resultDiv.textContent = "";
 
         board.forEach((row, rowIndex) => {
             row.forEach((cell, colIndex) => {
@@ -196,6 +199,10 @@ const screenController = (() => {
     }
 
     const clickHandlerBoard = (e) => {
+        if (game.getBoard().flat().some(cell => cell.getValue() === " ") === false) {
+            return; // Game is over
+        }
+        
         const selectedRow = e.target.dataset.row;
         const selectedColumn = e.target.dataset.column;
 
@@ -206,7 +213,7 @@ const screenController = (() => {
         updateScreen();
 
         if(result){
-            resultDiv.textContent = result;
+            status.textContent = result;
             return;
         }
 
@@ -215,13 +222,24 @@ const screenController = (() => {
 
     const resetGame = () => {
         game.resetGame();
-        resultDiv.textContent = ""; 
+        const activePlayer = game.getactivePlayer();
+        status.textContent = `${activePlayer.name}'s turn...`;
+        updateScreen();
+    };
+
+    const startGame = (e) => {
+        e.preventDefault();
+        const player1Name = player1Input.value.trim() || "Player 1";
+        const player2Name = player2Input.value.trim() || "Player 2";
+
+        game.setPlayers(player1Name, player2Name);
+        playerForm.style.display = "none";
+        resetButton.disabled = false;
         updateScreen();
     };
 
     boardDiv.addEventListener('click', clickHandlerBoard);
     resetButton.addEventListener('click', resetGame);
-
-    updateScreen();
+    playerForm.addEventListener('submit', startGame);
 })();
 
