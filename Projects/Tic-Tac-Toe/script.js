@@ -73,6 +73,12 @@ const GameController = () => {
     let activePlayer = players[0];
     let gameOver = false;
 
+    const setPlayers = (name1, name2) => {
+        players[0].name = name1;
+        players[1].name = name2;
+        activePlayer = players[0];
+    }
+
     const switchPlayerTurn = () => {
         activePlayer = activePlayer === players[0] ? players[1] : players[0];
     }
@@ -155,7 +161,8 @@ const GameController = () => {
         playRound,
         getactivePlayer,
         getBoard: gameboard.getBoard,
-        resetGame
+        resetGame,
+        setPlayers
     };
 };
 
