@@ -171,7 +171,6 @@ const screenController = (() => {
     const game = GameController();
     const status = document.querySelector('.status');
     const boardDiv = document.querySelector('.board');
-    // const resultDiv = document.querySelector('.result');
     const resetButton = document.querySelector('.reset');
     const playerForm = document.querySelector('.form-overlay');
     const player1Input = document.getElementById('player1-name');
@@ -184,7 +183,6 @@ const screenController = (() => {
         const activePlayer = game.getactivePlayer();
 
         status.textContent = `${activePlayer.name}'s turn...`;
-        // resultDiv.textContent = "";
 
         board.forEach((row, rowIndex) => {
             row.forEach((cell, colIndex) => {
@@ -202,7 +200,7 @@ const screenController = (() => {
         if (game.getBoard().flat().some(cell => cell.getValue() === " ") === false) {
             return; // Game is over
         }
-        
+
         const selectedRow = e.target.dataset.row;
         const selectedColumn = e.target.dataset.column;
 
@@ -222,8 +220,12 @@ const screenController = (() => {
 
     const resetGame = () => {
         game.resetGame();
-        const activePlayer = game.getactivePlayer();
-        status.textContent = `${activePlayer.name}'s turn...`;
+        status.textContent = "";
+        resetButton.disabled = true; 
+        playerForm.style.display = "flex"; 
+        player1Input.value = ""; 
+        player2Input.value = ""; 
+        boardDiv.textContent = "";
         updateScreen();
     };
 
