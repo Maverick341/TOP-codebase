@@ -14,16 +14,19 @@ const noBook = document.querySelector('.no-books');
 
 const myLibrary = [];
 
-function Book(title, author, pages, hasRead = false) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
+class Book {
+    constructor(title, author, pages, hasRead = false) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.hasRead = hasRead;
+    }
+
+    toggleReadStatus() {
+        this.hasRead = !this.hasRead;
+    }
 }
 
-Book.prototype.toggleReadStatus = function () {
-    this.hasRead = !this.hasRead;
-};
 
 function addBookToLibrary(title, author, pages, hasRead) {
     const curBook = new Book(title, author, pages, hasRead);
