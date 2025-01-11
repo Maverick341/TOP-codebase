@@ -1,0 +1,5 @@
+# Ignore all dist folders inside subdirectories
+**/dist/
+
+# Ignore all node_modules folders inside subdirectories
+**/node_modules/
