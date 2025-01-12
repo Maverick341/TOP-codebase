@@ -7,8 +7,8 @@ export default function initialPageLoad(){
     const description = document.createElement('p');
     description.textContent = 'Experience the legendary taste of Ichiraku Ramen, inspired by Naruto’s favorite spot in the Hidden Leaf Village—where every bowl is packed with flavor and tradition.';
 
-    const menubutton = document.createElement('button');
-    menubutton.textContent = 'See the Menu';
+    // const seeMenu = document.createElement('button');
+    // seeMenu.textContent = 'See the Menu';
 
     // const image = document.createElement('img');
     // image.src = 'your-image-path.jpg'; 
@@ -16,6 +16,6 @@ export default function initialPageLoad(){
 
     content.appendChild(headline);
     content.appendChild(description);
-    content.appendChild(menubutton);
+    // content.appendChild(seeMenu);
     // content.appendChild(image);
 }
