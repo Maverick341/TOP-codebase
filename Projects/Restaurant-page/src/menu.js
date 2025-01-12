@@ -13,4 +13,6 @@ export default function loadMenu() {
 
     // Append the menu elements to the content
     content.appendChild(menuHeader);
+    content.appendChild(menuItem1);
+    content.appendChild(menuItem2);
 }
