@@ -1,6 +1,6 @@
-import initialPageLoad from './initialPageLoad.js';
-import loadMenu from './menu.js';
-import loadContact from './contact.js';
+import initialPageLoad from './modules/initialPageLoad.js';
+import loadMenu from './modules/menu.js';
+import loadContact from './modules/contact.js';
 import './style.css';
 
 initialPageLoad();

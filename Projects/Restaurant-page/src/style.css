@@ -1,6 +1,6 @@
 @font-face {
     font-family: Star-wars;
-    src: url(../assets/Star-wars.ttf);
+    src: url(./assets/Star-wars.ttf);
 }
 
 * {
@@ -70,22 +70,21 @@ footer {
     align-items: center;
     background-color: #1a1919;
     color: #f9fafb;
-    position: relative;
+    position: sticky;
+    bottom: 0;
     padding: 10px 0;
 }
 
 #content {
-    max-width: 70%;
+    max-width: 100%;
+    display: grid;
     justify-content: center;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    flex-grow: 1;  
     padding: 20px;
 }
 
 section{
-    padding: 40px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,4 +104,42 @@ section{
     text-align: center;
     font-weight: bolder;
     font-size: 2.5rem;
+    margin-top: 150px;
+}
+
+.food {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    width: 450px; 
+    height: 150px; 
+    box-sizing: border-box; 
+    cursor: pointer;
+}
+
+.food img {
+    width: 175px; 
+    height: 120px;
+    margin-right: 15px;
+    border-radius: 15px; 
+    object-fit: cover; 
+}
+
+.food span {
+    font-size: 18px; 
+    font-weight: bold;
+}
+
+.custom-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-grid{
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
