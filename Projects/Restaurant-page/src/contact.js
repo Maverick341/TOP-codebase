@@ -1,6 +1,6 @@
 export default function loadContact() {
     const content = document.getElementById('content');
-    
+
     // Clear previous content
     content.innerHTML = '';
 
@@ -10,10 +10,10 @@ export default function loadContact() {
 
     // Example contact information (you can replace with your own)
     const address = document.createElement('p');
-    address.textContent = '123 Restaurant St, Food Town, 12345';
+    address.textContent = `Location: Dex’s Diner, CoCo Town, Coruscant.`;
 
     const phone = document.createElement('p');
-    phone.textContent = 'Phone: (123) 456-7890';
+    phone.textContent = `Comms Line: +1138-DEX-DINE (Holonet Enabled).`;
 
     // Append the contact elements to the content
     content.appendChild(contactHeader);

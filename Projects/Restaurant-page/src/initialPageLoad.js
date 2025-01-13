@@ -2,10 +2,10 @@ export default function initialPageLoad(){
     const content = document.getElementById('content');
     content.innerHTML = '';
     const headline = document.createElement('h1');
-    headline.textContent = 'Savor the Flavor of Ichiraku Ramen';
+    headline.textContent = `Taste the Galaxy at Dex’s Diner!`;
 
     const description = document.createElement('p');
-    description.textContent = 'Experience the legendary taste of Ichiraku Ramen, inspired by Naruto’s favorite spot in the Hidden Leaf Village—where every bowl is packed with flavor and tradition.';
+    description.textContent = `Welcome to Dex’s Diner, CoCo Town’s iconic eatery run by the legendary Dexter Jettster. Known for its hearty meals, Jawa Juice, and welcoming vibe, it’s the perfect spot for travelers, locals, and even Jedi. Come for the food, stay for the galactic charm!`;
 
     // const seeMenu = document.createElement('button');
     // seeMenu.textContent = 'See the Menu';
