@@ -3,7 +3,7 @@ export default function loadMenu() {
     content.innerHTML = '';
 
     const menuHeader = document.createElement('h1');
-    menuHeader.textContent = 'Our Menu';
+    menuHeader.textContent = 'our Menu';
 
     const menuItem1 = document.createElement('p');
     menuItem1.textContent = 'Dish 1 - $10';
@@ -11,7 +11,6 @@ export default function loadMenu() {
     const menuItem2 = document.createElement('p');
     menuItem2.textContent = 'Dish 2 - $12';
 
-    // Append the menu elements to the content
     content.appendChild(menuHeader);
     content.appendChild(menuItem1);
     content.appendChild(menuItem2);

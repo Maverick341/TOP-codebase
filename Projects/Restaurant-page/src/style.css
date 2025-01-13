@@ -1,26 +1,108 @@
+@font-face {
+    font-family: Star-wars;
+    src: url(../assets/Star-wars.ttf);
+}
+
 * {
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Star-wars', sans-serif;
+    font-weight: lighter;
+    height: 100%;
     margin: 0;
 }
 
 .logo {
+    padding: 15px;
     display: flex;
     justify-content: center;
+    background-color: #030712;
+    color: #f9fafb;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
 }
 
 nav {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 4px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.tabs {
+    font-family: 'Star-wars', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: 0;
+    border-bottom: 4px solid #9f1239;
+    border-top: 4px solid #9f1239;
+    color: #f9fafb;
+    background-color: #4c0519;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: inset 0px 0px 10px 10px #172554;
+    transition-duration: 0.5s;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+}
+
+.tabs:hover{
+    border-bottom: 4px solid #0891b2;
+    border-top: 4px solid #0891b2;
+    background-color: #155e75;
+    color: #f43f5e;
+    font-size: larger;
+    text-shadow: 0px 0px 20px #ebb4bd;
+}
+
+.active-tab{
+    color: #fda4af;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #1a1919;
+    color: #f9fafb;
+    position: relative;
+    padding: 10px 0;
 }
 
+#content {
+    max-width: 70%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;  
+    padding: 20px;
+}
+
+section{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    background-color: #020617;
+    color: #f9fafb;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+}
+
+.description {
+    padding: 20px;
+    text-align: center;
+    font-size: larger;
+}
+
+.headline{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.5rem;
+}

@@ -11,13 +11,22 @@ const contactButton = document.getElementById('contact');
 
 homeButton.addEventListener('click', () => {
     initialPageLoad(); 
+    homeButton.classList.add('active-tab');
+    menuButton.classList.remove('active-tab');
+    contactButton.classList.remove('active-tab');
 });
 
 menuButton.addEventListener('click', () => {
     loadMenu(); 
+    menuButton.classList.add('active-tab');
+    homeButton.classList.remove('active-tab');
+    contactButton.classList.remove('active-tab');
 });
 
 contactButton.addEventListener('click', () => {
-    loadContact(); 
+    loadContact();
+    contactButton.classList.add('active-tab');
+    menuButton.classList.remove('active-tab');
+    homeButton.classList.remove('active-tab');
 });
 
