@@ -1,5 +1,7 @@
 export default function initialPageLoad(){
     const content = document.getElementById('content');
+    content.classList.remove('contact-grid');
+    content.classList.remove('custom-grid');
     content.innerHTML = '';
     const headline = document.createElement('h1');
     headline.textContent = `Taste the Galaxy at Dex’s Diner`;
