@@ -7,6 +7,7 @@ import Dish5 from '../assets/wasaka-berry-pie.png';
 export default function loadMenu() {
     const content = document.getElementById('content');
     content.classList.add('custom-grid');
+    content.classList.remove('contact-grid');
     content.innerHTML = '';
 
     function createMenuItem(imageSrc, title, price) {

@@ -1,6 +1,7 @@
 export default function loadContact() {
     const content = document.getElementById('content');
     content.classList.add('contact-grid');
+    content.classList.remove('custom-grid');
     // Clear previous content
     content.innerHTML = '';
 
